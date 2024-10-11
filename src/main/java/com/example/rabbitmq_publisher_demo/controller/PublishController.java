@@ -12,7 +12,7 @@ public class PublishController {
     private PublishService publishService;
 
 
-    @PostMapping("/publish")
+    @PostMapping("/publish/trigger")
     @ResponseBody
     public String publishMessage(@RequestBody String message) {
         return publishService.publishMessage(message);

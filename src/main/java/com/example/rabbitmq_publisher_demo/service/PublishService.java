@@ -12,7 +12,10 @@ public class PublishService {
 
 
         public String publishMessage(String message) {
-            rabbitTemplate.convertAndSend("queue-1", message);
-            return "Message Published successfully";
+            for(int i=0; i<1000000; i++){
+                rabbitTemplate.convertAndSend("queue-1", message+" "+i);
+            }
+
+            return "1,000,000 Messages Published successfully";
         }
 }
